@@ -21,6 +21,9 @@
 static CORPSCON_CONFIG g_config;
 static CORPSCON_DATA_PT g_data;
 
+double (*g_vunit_function_in)();
+double (*g_vunit_function_out)();
+double (*g_grid_shift_unit_function)();
 
 /******************************************************************
 

@@ -1,5 +1,6 @@
 #include <windows.h>
 #include <dir.h>
+#include <_defs.h>
 //#include "dllglob.h"
 #include "cc_convert.h"
 #include "ccerror.h"
@@ -24,13 +25,26 @@ char ext[MAXEXT];
 char msg[256];
 
     switch (fdwReason)
-    {
+	{
         case DLL_PROCESS_ATTACH:
 				GetModuleFileName(hDLLInst,modulename,MAXPATH-1);
 			   fnsplit(modulename,drive,dir,name,ext);
 
+#ifdef _WIN64
+			   if(strcmpi(name,"corpscon_v6_64bit") || strcmpi(ext,".dll"))
+		   	   {
+				sprintf(msg,"This is the Corpscon6_64bit DLL developed by the "
+      							"Engineer Research and Development Center of "
+							"the U.S. Army Corps of Engineers and modified for 64 bits by DRH.  The name of "
+			                  "the DLL appears to have been changed to "
+                           "%s%s.",name,ext);
+				   MessageBox(NULL,msg,"Warning",MB_OK | MB_ICONWARNING);
+			   }
+#endif
+
+#ifdef __WIN32__
 			   if(strcmpi(name,"corpscon_v6") || strcmpi(ext,".dll"))
-			   {
+		  	   {
 			   	sprintf(msg,"This is the Corpscon6 DLL developed by the "
       							"Engineer Research and Development Center of "
                   			"the U.S. Army Corps of Engineers.  The name of "
@@ -38,7 +52,7 @@ char msg[256];
                            "%s%s.",name,ext);
 				   MessageBox(NULL,msg,"Warning",MB_OK | MB_ICONWARNING);
 			   }
-
+#endif
 				corpscon_default_config();
             break;
 
