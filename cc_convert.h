@@ -77,9 +77,6 @@ DLLEXPORT int _stdcall (*g_z_function1)();
 DLLEXPORT int _stdcall (*g_z_function2)();
 DLLEXPORT int _stdcall (*g_cf_function_in)();
 DLLEXPORT int _stdcall (*g_cf_function_out)();
-double (*g_vunit_function_in)();
-double (*g_vunit_function_out)();
-double (*g_grid_shift_unit_function)();
 
 /* CONVERSION */
 DLLEXPORT int _stdcall corpscon_initialize_convert(void);

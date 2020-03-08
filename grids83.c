@@ -491,7 +491,7 @@ int get_grids83_function(int opt, int zone, int *sp_function)
 	return CC_SUCCESS;
 }
 
-int init_sp83_constants(int zone, struct GRIDS83_CONSTANTS *c)
+int init_sp83_constants(int zone, pGRIDS83_CONSTANTS c)
 {
 struct LAM83_CONSTANTS lam83_c;
 struct TM83_CONSTANTS tm83_c;
@@ -534,7 +534,7 @@ int rc_tm;
 	 Rockville, MD
 	 January, 1989
 */
-int geo83_to_tm83(struct GRIDS83_CONSTANTS *grids83_c,
+int geo83_to_tm83(pGRIDS83_CONSTANTS grids83_c,
 						double *lat_in, double *lon_in,
                   double *north, double *east,
                   double *conv, double *kp)
@@ -645,7 +645,7 @@ struct TM83_CONSTANTS *c;
     Rockville, MD
     January, 1989
 */
-int tm83_to_geo83(struct GRIDS83_CONSTANTS *grids83_c,
+int tm83_to_geo83(pGRIDS83_CONSTANTS grids83_c,
 						double *lat, double *lon,
                   double *north_in, double *east_in,
                   double *conv, double *kp)
@@ -743,7 +743,7 @@ struct TM83_CONSTANTS *c;
 	 Rockville, MD
 	 January, 1989
 */
-int geo83_to_lam83(struct GRIDS83_CONSTANTS *grids83_c,
+int geo83_to_lam83(pGRIDS83_CONSTANTS grids83_c,
 							double *lat_in, double *lon_in,
                      double *north, double *east,
                      double *conv, double *kp)
@@ -806,7 +806,7 @@ struct LAM83_CONSTANTS *c;
     Rockville, MD
 	 January, 1989
 */
-int lam83_to_geo83(struct GRIDS83_CONSTANTS *grids83_c,
+int lam83_to_geo83(pGRIDS83_CONSTANTS grids83_c,
 							double *lat, double *lon,
                      double *north_in, double *east_in,
                      double *conv, double *kp)
@@ -875,7 +875,7 @@ struct LAM83_CONSTANTS *c;
 	for more info on LAM83_CONSTANTS.  Zone refers to
 	 the state plane zone id.
 */
-int init_lamb_83(int zone, struct LAM83_CONSTANTS   *c)
+int init_lamb_83(int zone, pLAM83_CONSTANTS c)
 {
 double dtmp,qs,ws,qn,wn,qb;
 
@@ -1473,7 +1473,7 @@ double dtmp,qs,ws,qn,wn,qb;
 	 for more info on TM83_CONSTANTS.  Zone refers to
 	 the state plane zone id.
 */
-int init_tm_83(int zone, struct TM83_CONSTANTS *c)
+int init_tm_83(int zone, pTM83_CONSTANTS c)
 {
 	if(c == NULL) return NULL_TM83_CONST_STRUCT;
 
@@ -1900,7 +1900,7 @@ int init_tm_83(int zone, struct TM83_CONSTANTS *c)
 	 for more info on OM83_CONSTANTS.  Zone refers to
 	 the state plane zone id.
 */
-int init_om_83(int zone, struct OM83_CONSTANTS *c)
+int init_om_83(int zone, pOM83_CONSTANTS c)
 {
 double epsq,cosphic,sinphic,wc,a,qc,x,alphao;
 
@@ -1969,7 +1969,7 @@ double epsq,cosphic,sinphic,wc,a,qc,x,alphao;
 	 for more info on TM83_CONSTANTS.  Zone refers to
 	 the state plane zone id.
 */
-int init_tm_const_83(struct TM83_CONSTANTS *c)
+int init_tm_const_83(pTM83_CONSTANTS c)
 {
 double n,u2,u4,u6,u8,v2,v4,v6,v8,cosor,cosor2,cosor4,cosor6;
 
@@ -2033,7 +2033,7 @@ double n,u2,u4,u6,u8,v2,v4,v6,v8,cosor,cosor2,cosor4,cosor6;
    return CC_SUCCESS;
 }
 
-int Direct_AK1_83(struct GRIDS83_CONSTANTS *grids83_c,
+int Direct_AK1_83(pGRIDS83_CONSTANTS grids83_c,
 							double *lat_in, double *lon_in,
 	                  double *north, double *east,
    	               double *conv, double *kp)
@@ -2095,7 +2095,7 @@ double lat,lon;
     return CC_SUCCESS;
 }
 
-int Inverse_AK1_83(struct GRIDS83_CONSTANTS *grids83_c,
+int Inverse_AK1_83(pGRIDS83_CONSTANTS grids83_c,
 							double *lat, double *lon,
                      double *north_in, double *east_in,
                      double *conv, double *kp)

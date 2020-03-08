@@ -297,7 +297,7 @@ int get_grids27_function(int opt, int zone, int *sp_function)
     Publication 62-4
     1968
 */
-int geo27_to_tm27(struct SP27_CONSTANTS *c,
+int geo27_to_tm27(pSP27_CONSTANTS c,
 						double *lat_in, double *lon_in,
 						double *north, double *east,
                   double *conv, double *kp)
@@ -394,7 +394,7 @@ double lat,lon;
     Publication 62-4
 	1968
 */
-int tm27_to_geo27(struct SP27_CONSTANTS *c,
+int tm27_to_geo27(pSP27_CONSTANTS c,
 						double *lat, double *lon,
                   double *north_in, double *east_in,
                   double *conv, double *kp)
@@ -524,7 +524,7 @@ double north,east;
     Publication 62-4
     1968
 */
-int geo27_to_lam27(struct SP27_CONSTANTS *c,
+int geo27_to_lam27(pSP27_CONSTANTS c,
 							double *lat_in, double *lon_in,
                      double *north, double *east,
                      double *conv, double *kp)
@@ -593,7 +593,7 @@ double lat,lon;
     Publication 62-4
     1968
 */
-int lam27_to_geo27(struct SP27_CONSTANTS *c,
+int lam27_to_geo27(pSP27_CONSTANTS c,
 							double *lat, double *lon,
                      double *north_in, double *east_in,
                      double *conv, double *kp)
@@ -671,7 +671,7 @@ double north,east;
 	return CC_SUCCESS;
 }
 
-int Direct_AK1_27(struct SP27_CONSTANTS *sp27_c,double *lat_in, double *lon_in,
+int Direct_AK1_27(pSP27_CONSTANTS sp27_c,double *lat_in, double *lon_in,
 						double *north, double *east, double *conv, double *kp)
 {
 double b = 1.00029977273;
@@ -736,7 +736,7 @@ double lat,lon;
 	return CC_SUCCESS;
 }
 
-int Inverse_AK1_27(struct SP27_CONSTANTS *sp27_c, double *lat, double *lon,
+int Inverse_AK1_27(pSP27_CONSTANTS sp27_c, double *lat, double *lon,
 							double *north_in, double *east_in, double *conv, double *kp)
 {
 double b = 1.00029977273;
@@ -798,7 +798,7 @@ double north,east;
 	return CC_SUCCESS;
 }
 
-int Direct_AK2thru9_27(struct SP27_CONSTANTS *sp27_c, double *lat_in, double *lon_in,
+int Direct_AK2thru9_27(pSP27_CONSTANTS sp27_c, double *lat_in, double *lon_in,
 								double *north, double *east, double *conv, double *kp)
 {
 double phi,c,cm,lampp,phipp,cosphi,cosphi2,cosphi4,cosphi6,tmp,tmp2,tmp4;
@@ -867,7 +867,7 @@ double lat,lon;
 	return CC_SUCCESS;
 }
 
-int Inverse_AK2thru9_27(struct SP27_CONSTANTS *sp27_c, double *lat, double *lon,
+int Inverse_AK2thru9_27(pSP27_CONSTANTS sp27_c, double *lat, double *lon,
 								double *north_in, double *east_in, double *conv, double *kp)
 {
 double phi,c,cm,cosomp,cosomp2,cosomp4;
