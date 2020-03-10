@@ -8,7 +8,7 @@ Unfortunately the only version of the DLL on the Army website is 32-bit.  The go
 
 #### Installation
 
-The first step is to install all necessary files from the Army website.  A pre-built copy of **corpscon_v6_64bit.dll** is included in the repository.  Place it in the same directory as the other files from the Army website.
+The first step is to install all necessary files from the Army website.  A pre-built copy of **corpscon_v6_64bit.dll** can be downloaded from the GitHub repository (click releases near the top of this webpage).  Place it in the same directory as the other files from the Army website.
 
 #### Status
 

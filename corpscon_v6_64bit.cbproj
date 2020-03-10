@@ -127,7 +127,6 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
-        <FinalOutputDir>.\$(Platform)\..</FinalOutputDir>
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="ccerror.c">
